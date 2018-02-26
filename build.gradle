@@ -1,0 +1,41 @@
+buildscript {
+    ext {
+        springBootVersion = '1.5.10.RELEASE'
+    }
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+    }
+}
+
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'org.springframework.boot'
+
+group 'com.rfsc'
+version '1.0-SNAPSHOT'
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+
+dependencies {
+    compileOnly 'org.projectlombok:lombok:1.16.20'
+
+    compile('org.springframework.boot:spring-boot-starter-jdbc')
+    compile group: 'org.postgresql', name: 'postgresql', version: '42.2.1'
+    compile 'com.github.spullara.mustache.java:compiler:0.9.5'
+    compile group: 'io.github.benas', name: 'random-beans', version: '3.7.0'
+    compile group: 'com.google.guava', name: 'guava', version: '24.0-jre'
+    compile group: 'io.vavr', name: 'vavr', version: '0.9.2'
+
+    compile 'com.fasterxml.jackson.dataformat:jackson-dataformat-yaml:2.3.0'
+
+    testCompile('org.springframework.boot:spring-boot-starter-test')
+
+
+}

@@ -1,0 +1,6 @@
+rootPackage: com.rfsc.clientes
+queries:
+- path: sql/prueba.sql
+  daoName: PruebaDAO
+  methodName: getAll
+  valueObjectName: PruebaVO
